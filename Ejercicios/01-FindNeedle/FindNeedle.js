@@ -18,11 +18,8 @@ Con index of
 function FindNeedle(haystack, needle) {
   const index = haystack.indexOf(needle);
 
-  if (index !== -1) {
-    return index;
-  } else {
-    return -1; // Si no se encuentra, devolvemos -1
-  }
+  if (index !== -1) return index;
+  else return -1
 }
 */
 
