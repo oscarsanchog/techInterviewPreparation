@@ -7,8 +7,7 @@ function HasBalancedBrackets(brackets) {
   }
 
   for (const bracket of brackets) { // 
-    const openBracketMatched = bracketPairs[bracket] // si el bracket que está recorriendo el ciclo for coincide con algunos de los brackets de apertura de bracketPairs, devolverá su valor (que es el respectivo bracket de cierre), pero si no coincide, es decir, si el bracket que recorre es de cierre, será undefined porque no está en las keys del objeto declarado, por lo tanto no entra en la condición
-    if (openBracketMatched) openBracketsStack.push(bracket) // si hay match (es decir, si no es undefined), entra en la condición y pushea el bracket de apertura en el stack
+    if (Object.keys(bracketPairs).includes(bracket)) openBracketsStack.push(bracket) // Convierte a las llaves o keys de bracketPairs en un array (que son los brackets de apertura) y luevo ve si el actual bracket que recorre está incluido en él. Si el actual bracket es de apertura, entra en este if
 
     if (Object.values(bracketPairs).includes(bracket)) { // Convierte los valores de bracketPairs en un array (que son los brackets de cierre) y luego verifica si el bracket que está actualmente recorriendo el ciclo for está incluido en tal array. Si el bracket actual es de cierre, entra en este if
       const lastOpenedBracket = openBracketsStack.pop() // saca el último corchete de apertura de la pila (LIFO)
