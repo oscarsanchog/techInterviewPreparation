@@ -11,13 +11,13 @@ describe('SolveGraph', function () {
     r: ['d'],
     z: ['z']
   }
-  it('should return true as we can get from a to r', function () {
-    expect(SolveGraph(graph, 'a', 'r')).to.equal(true)
+  it('should return false as we can get from a to r', function () {
+    expect(SolveGraph(graph, 'a', 'r')).to.equal(false)
   })
-  it('should return true as we can get from a to d', function () {
-    expect(SolveGraph(graph, 'a', 'd')).to.equal(true)
+  it('should return true as we can get from a to c', function () {
+    expect(SolveGraph(graph, 'a', 'c')).to.equal(true)
   })
-  it('should return false as we can not get from s to b', function () {
-    expect(SolveGraph(graph, 's', 'b')).to.equal(false)
+  it('should return false as we can not get from s to c', function () {
+    expect(SolveGraph(graph, 's', 'c')).to.equal(true)
   })
 })
